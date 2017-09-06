@@ -1,4 +1,4 @@
-<%= form_with(model: question, local: true) do |form| %>
+<%= form_with(model: question, class: "question-form", local: true) do |form| %>
   <% if question.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(question.errors.count, "error") %> prohibited this question from being saved:</h2>
@@ -11,14 +11,14 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :title %>
-    <%= form.text_field :title, id: :question_title %>
+     <%= form.text_field :title, id: :question_title, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :body %>
-    <%= form.text_area :body, id: :question_body %>
+    <%= form.text_area :body, id: :question_body, class: "form-control" %>
   </div>
 
   <div class="field">
@@ -26,7 +26,7 @@
     <%= form.text_field :tags, id: :question_tags %>
   </div>
 
-  <div class="actions">
+  <div class="actions btn">
     <%= form.submit %>
   </div>
 <% end %>
