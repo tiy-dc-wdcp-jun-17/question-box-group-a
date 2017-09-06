@@ -1,4 +1,4 @@
-<h1>Sign Up</h1>
+
 
 <% if @user.errors.any? %>
   <h2>Please correct the problems below before signing up.</h2>
@@ -9,9 +9,18 @@
   </ul>
 <% end %>
 
-<%= form_for :user, url: users_path do |f| %>
-  Email: <%= f.text_field :email %>
-  Password: <%= f.password_field :password %>
-  Password Confirmation: <%= f.password_field :password_confirmation %>
+<div class="login-form">
+  <h1>Sign Up</h1>
+  <%= form_for :user, url: users_path do |f| %>
+  <div>
+    <%= f.text_field :email, class: "form-control", placeholder: "Email" %>
+  </div>
+  <div class="">
+    <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
+  </div>
+  <div class="">
+    <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Confirm Password" %>
+  </div>
   <%= f.submit "Sign me up" %>
-<% end %>
+  <% end %>
+</div>
