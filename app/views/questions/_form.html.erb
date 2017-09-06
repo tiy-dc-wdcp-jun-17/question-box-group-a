@@ -21,6 +21,11 @@
     <%= form.text_area :body, id: :question_body %>
   </div>
 
+  <div class="field">
+    <%= form.label :tags %>
+    <%= form.text_field :tags, id: :question_tags %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
