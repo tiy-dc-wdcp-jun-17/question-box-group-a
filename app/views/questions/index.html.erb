@@ -18,5 +18,9 @@
             method: :delete,
             data: { confirm: 'Are you sure?'} %></td>
     </tr>
+
   <% end %>
 </table>
+<%= paginate @questions %>
+<%= link_to_next_page @questions, 'Next Page' %>
+<%= page_entries_info @questions %>
