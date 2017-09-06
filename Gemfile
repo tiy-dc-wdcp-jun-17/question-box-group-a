@@ -48,6 +48,7 @@ group :development do
   gem 'bootstrap-sass', '~> 3.3.6'
   gem 'jquery-rails', '~> 4.3.1'
   gem 'kaminari'
+  gem 'redcarpet', '~> 3.0.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

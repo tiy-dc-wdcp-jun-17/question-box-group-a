@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :question
+  has_many :questions
   has_secure_password
   validates :email,
   uniqueness: true,
