@@ -1,3 +1,5 @@
+require 'redcarpet/render_strip'
+
 module ApplicationHelper
   def markdown(text)
     options = {
@@ -19,4 +21,12 @@ module ApplicationHelper
 
     markdown.render(text).html_safe
   end
+
+  def markdown_strip(text)
+    renderer = Redcarpet::Render::StripDown
+    markdown_strip = Redcarpet::Markdown.new(renderer)
+
+    markdown_strip.render(text)
+  end
+
 end

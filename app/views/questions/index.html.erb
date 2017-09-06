@@ -12,7 +12,7 @@
   <% @questions.each do |question| %>
     <tr>
       <td><%= question.title %></td>
-      <td><%= markdown(question.body) %></td>
+      <td><%= truncate(markdown_strip(question.body)) %></td>
       <td><%= link_to 'Show', question_path(question) %></td>
       <td><%= link_to 'Edit', edit_question_path(question) %></td>
       <td><%= link_to 'Destroy', question_path(question),
