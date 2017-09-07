@@ -1,0 +1,12 @@
+<%= form_with(model: [question, answer], class: "answer-form", local: true) do |form| %>
+
+  <div class="field form-group">
+    <%= form.label :answer %>
+    <%= form.text_area :body, id: :answer_body, class: "form-control" %>
+  </div>
+
+
+  <div class="actions btn">
+    <%= form.submit %>
+  </div>
+<% end %>
