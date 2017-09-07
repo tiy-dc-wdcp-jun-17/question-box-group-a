@@ -9,6 +9,6 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
   def authenticate_user!
-    redirect_to new_users_path unless current_user
+    redirect_to questions_path unless current_user
   end
 end
