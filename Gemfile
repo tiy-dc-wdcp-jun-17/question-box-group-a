@@ -49,6 +49,7 @@ group :development do
   gem 'jquery-rails', '~> 4.3.1'
   gem 'kaminari'
   gem 'redcarpet', '~> 3.0.0'
+  gem 'pry-rails'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
