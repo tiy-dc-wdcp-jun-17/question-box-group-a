@@ -3,7 +3,12 @@ class QuestionsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :update, :destroy, :create]
 
   def index
-    @questions = Question.page(params[:page]).per(10)
+    if params[:tag]
+      @questions = Question.tagged_with(params[:tag])
+    else
+      @questions = Question.all
+    end
+    @questions = @questions.page(params[:page]).per(10)
   end
 
   def show
@@ -64,6 +69,6 @@ class QuestionsController < ApplicationController
     end
 
     def question_params
-      params.require(:question).permit(:title, :body, :tags)
+      params.require(:question).permit(:title, :body, :tag_list)
     end
 end
