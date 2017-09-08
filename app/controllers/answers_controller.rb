@@ -12,21 +12,11 @@ class AnswersController < ApplicationController
   def show
     @question = Question.find(params[:question_id])
     @answers = @question.answers.find(params[:question_id])
-
-    # respond_to do |format|
-    #   format.html
-    #   format.xml { render :xml => @answers }
-    # end
   end
 
   def new
     @question = Question.find(params[:question_id])
     @answer = @question.answers.new
-
-    # respond_to do |format|
-    #   format.html
-    #   format.xml { render :xml => @answers }
-    # end
   end
 
   def edit
