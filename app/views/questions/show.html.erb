@@ -17,13 +17,13 @@
 
 <%= render './answers/form', answer: @answer, question: @question %>
 
-<p> <%= @answers %> </p>
+<p> <%= @answers.to_json %> </p>
 
-<!-- <ul>
-  <% @answers.each do |answer| %>
-  <li> <%= answer.body %> </li>
+<ul>
+  <% @answers.each do |a| %>
+  <li> <%= a.body %> </li>
   <% end %>
-</ul> -->
+</ul>
 
 
 <%= link_to 'Edit', edit_question_path(@question) %> |
