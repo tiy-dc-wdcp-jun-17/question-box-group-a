@@ -10,8 +10,8 @@ class AnswersController < ApplicationController
   end
 
   def show
-    # @question = Question.find(params[:question_id])
-    # @answers = @question.answers.find(params[:question_id])
+    @question = Question.find(params[:question_id])
+    @answers = @question.answers.find(params[:question_id])
 
     # respond_to do |format|
     #   format.html
@@ -40,7 +40,7 @@ class AnswersController < ApplicationController
     @answer.user = current_user
 
     respond_to do |format|
-      if @answer.save!
+      if @answer.save
         format.html { redirect_to([@question, @answer], :notice => 'Answer was successfully posted.') }
         format.json { render :show, status: :created, location: @question.answer }
       else
