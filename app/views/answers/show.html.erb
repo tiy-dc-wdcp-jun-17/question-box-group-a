@@ -1,2 +1,6 @@
 <h1>Answers#show</h1>
-<p>Find me in app/views/answers/show.html.erb</p>
+<ul>
+  <% @questions.answers.each do |answer| %>
+  <li>answer.body</li>
+  <% end %>
+</ul>
