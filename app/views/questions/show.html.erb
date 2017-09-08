@@ -19,11 +19,12 @@
 
 <%= render './answers/form', answer: @answer, question: @question %>
 
-<ul>
+
   <% @answers.each do |a| %>
-  <li> <%= a.body %> </li>
+  <div class="answer_body"> <%= a.body %>
+    <button type="submit" name="submit">Correct Answer</button>
+  </div>
   <% end %>
-</ul>
 
 
 <%= link_to 'Edit', edit_question_path(@question) %> |
