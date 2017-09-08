@@ -2,31 +2,27 @@ class QuestionsController < ApplicationController
   before_action :set_question, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :edit, :update, :destroy, :create]
 
-  # GET /questions
-  # GET /questions.json
   def index
     @questions = Question.page(params[:page]).per(10)
     # @questions = Question.order("created_at DESC")
   end
 
-  # GET /questions/1
-  # GET /questions/1.json
+
   def show
     @answer = Answer.new
     @answers = @question.answers.all
+
   end
 
-  # GET /questions/new
+
   def new
     @question = Question.new
   end
 
-  # GET /questions/1/edit
+
   def edit
   end
 
-  # POST /questions
-  # POST /questions.json
   def create
     @question = Question.new(question_params)
     @question.user = current_user
