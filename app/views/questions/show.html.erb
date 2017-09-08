@@ -12,7 +12,9 @@
 
 <p>
   <strong>Tags:</strong>
-  <%= @question.tags %>
+  <% @question.tags.each do |tag| %>
+    <span class="label label-default"><%= tag.name %></span>
+  <% end %>
 </p>
 
 <%= render './answers/form', answer: @answer, question: @question %>
