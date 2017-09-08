@@ -23,7 +23,7 @@
 
   <div class="field">
     <%= form.label :tag_list %>
-    <%= form.text_field :tag_list, id: :question_tags, class: "form-control" %>
+    <%= form.text_field :tag_list, id: :question_tags, class: "form-control", value: question.tag_list.join(", ") %>
   </div>
 
   <div class="actions btn">

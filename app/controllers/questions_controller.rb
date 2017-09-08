@@ -3,7 +3,12 @@ class QuestionsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :update, :destroy, :create]
 
   def index
-    @questions = Question.page(params[:page]).per(10)
+    if params[:tag]
+      @questions = Question.tagged_with(params[:tag])
+    else
+      @questions = Question.all
+    end
+    @questions = @questions.page(params[:page]).per(10)
     # @questions = Question.order("created_at DESC")
   end
 
