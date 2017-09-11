@@ -1,0 +1,11 @@
+<h1>Search Results</h1>
+
+<ul class="results">
+  <% @results.each do |result| %>
+  <li>
+     <%= link_to question_path(result.id) do %>
+     <%= content_tag :h4, result.title %>
+     <% end %>
+   </li>
+  <% end %>
+</ul>
