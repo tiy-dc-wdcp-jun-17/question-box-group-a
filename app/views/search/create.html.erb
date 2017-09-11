@@ -1,10 +1,9 @@
 <h1>Search Results</h1>
-<p>Loading...</p>
 
 <ul>
-<% @results.each do |result| %>
-  <li> <h2> <%= result.title %> </h2>
-     <%= result.body %>
-   </li>
-<% end %>
+  <% @results.each do |result| %>
+    <li> <h2> <%= result.title %> </h2>
+       <%= result.body %>
+     </li>
+  <% end %>
 </ul>
