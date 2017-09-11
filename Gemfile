@@ -35,6 +35,7 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'jquery-rails', '~> 4.3.1'
 gem 'kaminari'
 gem 'redcarpet', '~> 3.0.0'
+gem 'pg_search'
 
 
 group :development, :test do
