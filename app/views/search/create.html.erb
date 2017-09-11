@@ -2,8 +2,9 @@
 
 <ul>
   <% @results.each do |result| %>
-    <li> <h2> <%= result.title %> </h2>
-       <%= result.body %>
+    <li>
+      <h4> <%= result.title %> </h4>
+      <%= link_to 'View', question_path(result.id) %>
      </li>
   <% end %>
 </ul>
