@@ -8,25 +8,22 @@
   <h1>Questions</h1>
 <% end %>
 
-<table class="">
-  <tr>
-    <th>Question</th>
-    <th>Description</th>
-  </tr>
 
+<ul class="questions">
   <% @questions.each do |question| %>
-    <tr>
-      <td><%= question.title %></td>
-      <td><%= truncate(markdown_strip(question.body)) %></td>
-      <td><%= link_to 'Show', question_path(question) %></td>
-      <td><%= link_to 'Edit', edit_question_path(question) %></td>
-      <td><%= link_to 'Destroy', question_path(question),
+  <li>
+      <%= question.title %>
+      <%= truncate(markdown_strip(question.body)) %>
+      <div class='question-links'>
+      <%= link_to 'Show', question_path(question) %>
+      <%= link_to 'Edit', edit_question_path(question) %>
+      <%= link_to 'Destroy', question_path(question),
             method: :delete,
-            data: { confirm: 'Are you sure?'} %></td>
-    </tr>
-
+            data: { confirm: 'Are you sure?'} %>
+          </div>
+  </li>
   <% end %>
-</table>
+</ul>
 <%= paginate @questions %>
 <%= link_to_next_page @questions, 'Next Page' %>
 <%= page_entries_info @questions %>
