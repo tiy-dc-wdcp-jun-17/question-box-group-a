@@ -17,10 +17,13 @@
  @import "bootstrap";
 
 
+
+
+
  .answer_body {
    display: flex;
    justify-content: space-between;
-   background-color: lightgrey;
+   background-color: rgba(29,22,53, 0.5);
    margin: 20px 0 20px 0px;
    padding: 20px;
    border-radius: 5px;
@@ -28,5 +31,30 @@
 
    button {
       font-size: 11px;
+   }
+ }
+
+
+ .results {
+   list-style: none;
+
+   li {
+      background-color: rgba(29,22,53, 0.5);
+      color: white;
+      margin: 20px;
+      padding: 10px;
+      border-radius: 5px;
+
+      &:hover {
+         background-color: rgba(29,22,53, 0.5);
+      }
+
+      a {
+         color: white;
+
+         &:hover {
+            text-decoration: none;
+         }
+      }
    }
  }

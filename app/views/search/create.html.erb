@@ -1,10 +1,11 @@
 <h1>Search Results</h1>
 
-<ul>
+<ul class="results">
   <% @results.each do |result| %>
-    <li>
-      <h4> <%= result.title %> </h4>
-      <%= link_to 'View', question_path(result.id) %>
-     </li>
+  <li>
+     <%= link_to question_path(result.id) do %>
+     <%= content_tag :h4, result.title %>
+     <% end %>
+   </li>
   <% end %>
 </ul>
