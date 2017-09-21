@@ -5,10 +5,10 @@
     <% if result.searchable.class == Question %>
       <li> <%= result.searchable.title %> </li>
       <li> <%= result.searchable.body %> </li>
-      <%= link_to "Show", "/questions/:id" %>
+      <%= link_to "Show", question_path(result.searchable) %>
     <% else  %>
       <li> <%= result.searchable.body %> </li>
-      <%= link_to "Show", "/questions/:question_id/answers/:id" %>
+      <%= link_to "Show", question_answer_path(result.searchable.question, result.searchable) %>
     <% end %>
   <% end %>
 </ul>
