@@ -11,7 +11,7 @@ class AnswersController < ApplicationController
 
   def show
     @question = Question.find(params[:question_id])
-    @answers = @question.answers.find(params[:question_id])
+    @answers = @question.answers.find(params[:id])
   end
 
   def new
@@ -21,7 +21,7 @@ class AnswersController < ApplicationController
 
   def edit
     @question = Question.find(params[:question_id])
-    @answer = @question.answers.find(params[:question_id])
+    @answer = @question.answers.find(params[:id])
   end
 
   def create

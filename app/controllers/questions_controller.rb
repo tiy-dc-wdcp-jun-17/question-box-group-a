@@ -8,7 +8,7 @@ class QuestionsController < ApplicationController
     else
       @questions = Question.all
     end
-    @questions = @questions.page(params[:page]).per(10)
+      @questions = @questions.page(params[:page]).per(10)
   end
 
   def show

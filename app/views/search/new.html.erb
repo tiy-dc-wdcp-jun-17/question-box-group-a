@@ -1,0 +1,14 @@
+<h1>Search Results</h1>
+
+<ul>
+  <% @results.each do |result| %>
+    <% if result.searchable.class == Question %>
+      <li> <%= result.searchable.title %> </li>
+      <li> <%= result.searchable.body %> </li>
+      <%= link_to "Show", question_path(result.searchable) %>
+    <% else  %>
+      <li> <%= result.searchable.body %> </li>
+      <%= link_to "Show", question_answer_path(result.searchable.question, result.searchable) %>
+    <% end %>
+  <% end %>
+</ul>
