@@ -3,6 +3,11 @@
 <ul>
   <% @results.each do |result| %>
     <li> <%= result.title %> </li>
-    <p>hello</p>
+      <p>Answers:</p>
+      <ul>
+        <% result.answers.each do |answer| %>
+        <li><%= answer.body %></li>
+        <% end %>
+      </ul>
   <% end %>
 </ul>
