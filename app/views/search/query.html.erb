@@ -1,0 +1,23 @@
+<h1>Results</h1>
+
+<ul>
+  <% @results.each do |result| %>
+    <% if result.searchable.class == Question %>
+      <li> <%= link_to(result.searchable.title, question_path(result.searchable)) %> </li>
+        <p>Answers:</p>
+        <ul>
+          <% result.searchable.answers.each do |answer| %>
+            <li><%= answer.body %></li>
+          <% end %>
+        </ul>
+    <% elsif result.searchable.class == Answer %>
+      <li><%= link_to(result.searchable.question.title, question_path(result.searchable.question)) %></li>
+      <p>Answers:</p>
+      <ul>
+        <% result.searchable.question.answers.each do |answer| %>
+          <li><%= answer.body %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  <% end %>
+</ul>

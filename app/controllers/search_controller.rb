@@ -1,5 +1,6 @@
 class SearchController < ApplicationController
-  def create
-    @results = Question.search_for(params[:search])
+  def query
+
+    @results = PgSearch.multisearch(params[:q])
   end
 end

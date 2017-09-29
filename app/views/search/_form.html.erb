@@ -1,4 +1,4 @@
-<%= form_with(url: search_path, class: 'navbar-form navbar-left', local: true) do |form| %>
-  <%= form.text_field :search, class: 'form-control', placeholder: "Type in Search" %>
-  <%= form.submit "Search", class: 'btn btn-default' %>
+<%= form_with(url: search_path, class: 'navbar-form navbar-left', local: true, method: :get, skip_enforcing_utf8: true) do |form| %>
+  <%= form.text_field :q, class: 'form-control', placeholder: "Type in Search" %>
+  <%= form.submit "Search", name: nil, class: 'btn btn-default' %>
 <% end %>

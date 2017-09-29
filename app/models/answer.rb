@@ -1,8 +1,8 @@
 class Answer < ApplicationRecord
-  include PgSearch
   belongs_to :user
   belongs_to :question
+  include PgSearch
 
-  multisearchable against: %i(title body)
-  
+  pg_search_scope :search_for, against: %i(body), using: {tsearch: { any_word: true} }
+  multisearchable against: %i(body)
 end

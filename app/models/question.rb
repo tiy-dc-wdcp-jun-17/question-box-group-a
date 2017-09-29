@@ -5,5 +5,5 @@ class Question < ApplicationRecord
   belongs_to :user
 
   pg_search_scope :search_for, against: %i(title body), using: {tsearch: { any_word: true} }
-  multisearchable against: %i(body)
+  multisearchable against: %i(title body)
 end

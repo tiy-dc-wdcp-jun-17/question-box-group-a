@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
 
 
-  post '/search', :to => 'search#create'
+  get '/search', :to => 'search#query'
 
 
   get '/tags', :to => 'tags#index'
